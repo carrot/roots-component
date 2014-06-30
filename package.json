@@ -1,0 +1,47 @@
+{
+  "name": "roots-component",
+  "version": "0.0.0",
+  "description": "component functionality for roots",
+  "main": "lib",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "component-builder": "*",
+    "component-resolver": "*",
+    "graceful-fs": "*"
+  },
+  "devDependencies": {
+    "coffee-script": "*",
+    "mocha": "*",
+    "should": "*",
+    "coffeelint": "*",
+    "istanbul": "*",
+    "mocha-lcov-reporter": "*",
+    "coveralls": "*",
+    "when": "*",
+    "roots": "3.x",
+    "roots-util": "0.0.4"
+  },
+  "peerDependencies": {
+    "roots": "3.x"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/carrot/roots-component.git"
+  },
+  "keywords": [
+    "roots-extension",
+    "roots",
+    "component"
+  ],
+  "author": "carrot",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/carrot/roots-component/issues"
+  },
+  "homepage": "https://github.com/carrot/roots-component"
+}

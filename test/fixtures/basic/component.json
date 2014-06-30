@@ -1,0 +1,9 @@
+{
+  "name": "component-test",
+  "dependencies": {
+    "moment/moment": "*"
+  },
+  "scripts": [
+    "main.js"
+  ]
+}

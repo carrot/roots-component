@@ -1,0 +1,6 @@
+{
+  "name": "test",
+  "dependencies": {
+    "coffee-script": "1.7.x"
+  }
+}
