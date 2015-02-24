@@ -3,7 +3,8 @@
   "dependencies": {
     "moment/moment": "*"
   },
+  "main": "public/js/main.js",
   "scripts": [
-    "main.js"
+    "public/js/main.js"
   ]
 }
