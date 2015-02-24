@@ -32,7 +32,8 @@ describe 'roots component', ->
     helpers.file.has_content(path2).should.be.ok
 
   it 'should match expected build', ->
-    path1 = path.join(@public, 'js/build.js')
-    path1Expected = path.join(@expected, 'build.js')
-    helpers.file.has_content(path1).should.be.ok
-    helpers.file.matches_file(path1, path1Expected).should.be.ok
+    actual = path.join(_path, @public, 'js/build.js')
+    expected = path.join(_path, @expected, 'build.js')
+
+    fs.readFileSync(actual, encoding: 'utf8')
+      .should.equal(fs.readFileSync(expected, encoding: 'utf8'))
