@@ -16,26 +16,22 @@ before (done) ->
 
 # tests
 describe 'roots component', ->
-
   before (done) ->
     @public = path.join('basic', 'public')
     @expected = 'expected'
     helpers.project.compile(Roots, 'basic', -> done())
 
   it 'should compile main', ->
-
     path1 = path.join(@public, 'js/main.js')
     helpers.file.exists(path1).should.be.ok
     helpers.file.has_content(path1).should.be.ok
 
   it 'should compile build', ->
-
-    path2 = path.join("" + @pubic, "js/build.js")
+    path2 = path.join(@public, 'js/build.js')
     helpers.file.exists(path2).should.be.ok
     helpers.file.has_content(path2).should.be.ok
 
   it 'should match expected build', ->
-
     path1 = path.join(@public, 'js/build.js')
     path1Expected = path.join(@expected, 'build.js')
     helpers.file.has_content(path1).should.be.ok
