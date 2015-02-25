@@ -1,34 +1,34 @@
-
 fs = require 'graceful-fs'
 path = require 'path'
 build = require 'component-builder'
-resolve = require 'component-resolver'
+resolveComponents = require 'component-resolver'
+W = require 'when'
 
-module.exports = ->
+class RootsComponent
+  constructor: (@roots) ->
+    @projectRoot = @roots.root
 
-  class RootsComponent
-    constructor: (@roots) ->
-      @projectRoot = @roots.root
-
-    project_hooks: ->
-      console.log "stepped into project_hooks"
-      after: =>
-        console.log "stepped into after"
-
-        resolve(@projectRoot,
-          (err, tree) ->
-            console.log "stepped into resolve"
-            if err then throw err
-
-            build.scripts(tree)
+  project_hooks: ->
+    after: =>
+      W.promise((resolve, reject) =>
+        resolveComponents(
+          @projectRoot
+          out: path.join(@projectRoot, 'components')
+          install: true
+          (err, tree) =>
+            if err then reject(err)
+            build
+              .scripts(tree)
               .use('scripts', build.plugins.js())
-              .end((err, str) ->
-                console.log "stepped into build"
-                if err then throw err
-                
-                else
-                  fs.writeFileSync(path.join(@projectRoot, "./public/js/build.js")
-                    , build.scripts.require + str
-                  )
+              .end((err, str) =>
+                if err then reject(err)
+                fs.writeFileSync(
+                  path.join(@projectRoot, @roots.config.output, 'js/build.js')
+                  build.scripts.require + str
+                )
+                resolve()
               )
         )
+      )
+
+module.exports = RootsComponent

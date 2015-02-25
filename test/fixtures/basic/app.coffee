@@ -1,5 +1,4 @@
-roots_component = require '../../..'
+rootsComponent = require '../../../lib'
 
 module.exports =
-  ignores: ['**/_*',"**/.DS_Store"]
-  extensions: [new roots_component]
+  extensions: [rootsComponent]
