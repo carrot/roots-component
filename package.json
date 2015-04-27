@@ -1,10 +1,10 @@
 {
   "name": "roots-component",
-  "version": "0.0.0",
   "description": "component functionality for roots",
-  "main": "lib",
-  "directories": {
-    "test": "test"
+  "version": "0.0.0",
+  "author": "carrot",
+  "bugs": {
+    "url": "https://github.com/carrot/roots-component/issues"
   },
   "dependencies": {
     "component-builder": "*",
@@ -14,31 +14,31 @@
   },
   "devDependencies": {
     "coffee-script": "*",
-    "mocha": "*",
-    "should": "*",
     "coffeelint": "*",
-    "istanbul": "*",
-    "mocha-lcov-reporter": "*",
     "coveralls": "*",
+    "istanbul": "*",
+    "mocha": "*",
+    "mocha-lcov-reporter": "*",
     "roots": "3.0.0-rc.10",
-    "roots-util": "0.1.0"
+    "roots-util": "0.1.0",
+    "should": "*"
   },
-  "scripts": {
-    "test": "mocha"
+  "directories": {
+    "test": "test"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/carrot/roots-component.git"
-  },
+  "homepage": "https://github.com/carrot/roots-component",
   "keywords": [
     "roots-extension",
     "roots",
     "component"
   ],
-  "author": "carrot",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/carrot/roots-component/issues"
+  "main": "lib",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/carrot/roots-component.git"
   },
-  "homepage": "https://github.com/carrot/roots-component"
+  "scripts": {
+    "test": "mocha"
+  }
 }
