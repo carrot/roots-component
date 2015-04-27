@@ -9,7 +9,8 @@
   "dependencies": {
     "component-builder": "*",
     "component-resolver": "*",
-    "graceful-fs": "*"
+    "graceful-fs": "*",
+    "when": "^3.7.2"
   },
   "devDependencies": {
     "coffee-script": "*",
@@ -19,7 +20,6 @@
     "istanbul": "*",
     "mocha-lcov-reporter": "*",
     "coveralls": "*",
-    "when": "*",
     "roots": "3.0.0-rc.10",
     "roots-util": "0.1.0"
   },
